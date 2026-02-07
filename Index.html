@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be Mine, Bangari?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 45px;
+      border-radius: 25px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      max-width: 420px;
+      width: 90%;
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.15rem;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    button {
+      padding: 14px 30px;
+      font-size: 1.05rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .yes {
+      background: #ff2d55;
+      color: white;
+      box-shadow: 0 8px 20px rgba(255,45,85,0.5);
+    }
+
+    .no {
+      background: #ffffff;
+      color: #ff2d55;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="question">
+    <h1>Hey Bangari ❤️</h1>
+    <p>
+      I love you bby, my only bby.<br>
+      You make me happy, happy happy 💕
+    </p>
+    <h2>Will you be mine forever? 💍</h2>
+    <button class="yes" onclick="sayYes()">Yes 💖</button>
+    <button class="no" onclick="sayNo()">No 🙈</button>
+  </div>
+
+  <div class="card hidden" id="yesAnswer">
+    <h1>YAYYYY 😍❤️</h1>
+    <p>
+      You just made me the happiest person alive 💖<br>
+      My forever starts with you, Bangari 🥹
+    </p>
+    <p>Happy Valentine’s Day, my love 🌹</p>
+  </div>
+
+  <div class="card hidden" id="noAnswer">
+    <h1>Oops 😌</h1>
+    <p>
+      That button was just for decoration 😜<br>
+      Try again, my bby ❤️
+    </p>
+    <button class="yes" onclick="reset()">Okay 😍</button>
+  </div>
+
+  <script>
+    function sayYes() {
+      document.getElementById("question").classList.add("hidden");
+      document.getElementById("yesAnswer").classList.remove("hidden");
+    }
+
+    function sayNo() {
+      document.getElementById("question").classList.add("hidden");
+      document.getElementById("noAnswer").classList.remove("hidden");
+    }
+
+    function reset() {
+      document.getElementById("noAnswer").classList.add("hidden");
+      document.getElementById("question").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
